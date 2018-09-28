@@ -1,0 +1,42 @@
+Start testing: Sep 28 02:35 PDT
+----------------------------------------------------------
+1/1 Testing: bit_vector_test
+1/1 Test: bit_vector_test
+Command: "/Users/amallia/Development/bit_vector/build/test/bit_vector_test"
+Directory: /Users/amallia/Development/bit_vector/build/test
+"bit_vector_test" start time: Sep 28 02:35 PDT
+Output:
+----------------------------------------------------------
+[==========] Running 8 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 8 tests from bit_vector_test
+[ RUN      ] bit_vector_test.empty
+[       OK ] bit_vector_test.empty (0 ms)
+[ RUN      ] bit_vector_test.initialized
+[       OK ] bit_vector_test.initialized (0 ms)
+[ RUN      ] bit_vector_test.push_back
+[       OK ] bit_vector_test.push_back (0 ms)
+[ RUN      ] bit_vector_test.swap
+[       OK ] bit_vector_test.swap (0 ms)
+[ RUN      ] bit_vector_test.copy_constructor
+[       OK ] bit_vector_test.copy_constructor (0 ms)
+[ RUN      ] bit_vector_test.set
+[       OK ] bit_vector_test.set (0 ms)
+[ RUN      ] bit_vector_test.iterator
+[       OK ] bit_vector_test.iterator (0 ms)
+[ RUN      ] bit_vector_test.fuzzy
+[       OK ] bit_vector_test.fuzzy (0 ms)
+[----------] 8 tests from bit_vector_test (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bit_vector_test" end time: Sep 28 02:35 PDT
+"bit_vector_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 28 02:35 PDT
