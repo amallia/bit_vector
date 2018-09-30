@@ -34,3 +34,6 @@ target_include_directories(bit_vector INTERFACE
 
 enable_testing()
 add_subdirectory(test)
+
+add_subdirectory(bench)
+

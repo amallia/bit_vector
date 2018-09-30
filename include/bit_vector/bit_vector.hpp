@@ -71,8 +71,6 @@ class bit_vector {
 
         bool operator*() { return m_bv.test(m_pos); }
 
-        bool operator->() { return m_bv.test(m_pos); }
-
         bool operator==(const const_iterator &other) const {
             return (m_pos == other.m_pos) and (m_bv == other.m_bv);
         }
@@ -99,8 +97,6 @@ class bit_vector {
         }
 
         reference operator*() { return reference{m_bv, m_pos}; }
-
-        reference operator->() { return reference{m_bv, m_pos}; }
 
         bool operator==(const iterator &other) const {
             return (m_pos == other.m_pos) and (m_bv == other.m_bv);
