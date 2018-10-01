@@ -2,32 +2,35 @@
 
 #include <set>
 #include <vector>
+#include <random>
 
-static void BM_VectorInsert(benchmark::State &state) {
+static void bit_vector_push_back(benchmark::State &state) {
 
   while (state.KeepRunning()) {
-    std::vector<int> insertion_test;
-    for (int i = 0, i_end = state.range_x(); i < i_end; i++) {
-      insertion_test.push_back(i);
+    std::vector<bool> v;
+    v.reserve(state.range(0));
+    for (int i = 0, i_end = state.range(0); i < i_end; i++) {
+      v.push_back(i);
     }
   }
 }
+BENCHMARK(bit_vector_push_back)->Range(8, 8 << 10);
 
-// Register the function as a benchmark
-BENCHMARK(BM_VectorInsert)->Range(8, 8 << 10);
-
-//~~~~~~~~~~~~~~~~
-
-// Define another benchmark
-static void BM_SetInsert(benchmark::State &state) {
+static void bit_vector_access(benchmark::State &state) {
 
   while (state.KeepRunning()) {
-    std::set<int> insertion_test;
-    for (int i = 0, i_end = state.range_x(); i < i_end; i++) {
-      insertion_test.insert(i);
+    std::vector<bool> v;
+    state.PauseTiming();
+    for (int i = 0, i_end = state.range(0); i < i_end; i++) {
+      const bool random_bit = rand() % 2;
+      v.push_back(random_bit);
+    }
+    state.ResumeTiming();
+    for (int i = 0, i_end = state.range(0); i < i_end; i++) {
+      benchmark::DoNotOptimize(v[i]);
     }
   }
 }
-BENCHMARK(BM_SetInsert)->Range(8, 8 << 10);
+BENCHMARK(bit_vector_access)->Range(8, 8 << 10);
 
 BENCHMARK_MAIN();
