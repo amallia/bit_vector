@@ -3,7 +3,11 @@ EXECUTE_PROCESS(COMMAND git submodule update --init
                 OUTPUT_QUIET
         )
 
+if(NOT TARGET gtest)
 add_subdirectory(googletest EXCLUDE_FROM_ALL)
+endif()
 
+if(NOT TARGET benchmark)
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
 add_subdirectory(benchmark EXCLUDE_FROM_ALL)
+endif()
